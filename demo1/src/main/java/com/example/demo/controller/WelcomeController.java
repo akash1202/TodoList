@@ -15,20 +15,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.example.demo.services.LoginService;
 
 @Controller
 @SessionAttributes("name")
-public class LoginController {
+public class WelcomeController {
 	
-	@Autowired
-	LoginService loginService;
 	
 	@Value("${spring.application.name}")
 	private String name;
 	
 	@RequestMapping(value="/",method=RequestMethod.GET)
-	public String hello(ModelMap model) {
+	public String showWelcomePage(ModelMap model) {
 		model.put("name",getLoggedInUserName(model));
 		return "success";
 	}

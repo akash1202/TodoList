@@ -81,6 +81,8 @@ public String updateTodo(ModelMap model,@Valid Todo todo,BindingResult result ) 
 
 @RequestMapping(value="/delete-todo",method=RequestMethod.GET)
 public String removeTodo(@RequestParam int id) {
+	if(id==1)
+		throw new RuntimeException("something is not ok myfriend!!!");
 	service.deleteTodo(id);
 	return "redirect:list-todos";
 }
