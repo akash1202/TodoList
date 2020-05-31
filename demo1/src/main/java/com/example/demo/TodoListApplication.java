@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @ComponentScan("com.example.demo")
-public class Demo1Application{
+public class TodoListApplication{
 
 	@Value("${spring.application.name}")
 	private String name;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(Demo1Application.class, args);
+		SpringApplication.run(TodoListApplication.class, args);
 	}
 	
 	
